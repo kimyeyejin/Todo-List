@@ -1,0 +1,54 @@
+<!-- 로그인 페이지 -->
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../style/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        document.getElementById('login').addEventListener('click', () => {
+          if (document.getElementById('id').value === '' || !document.getElementById('id').value) {
+            alert("아이디를 입력해주세요.");
+            return;
+          }
+          if (document.getElementById('password').value === '' || !document.getElementById('password').value) {
+            alert("비밀번호를 입력해주세요.");
+            return;
+          }
+          document.getElementById('popup').className += ' active';
+        });
+    });
+  </script>
+  <title>Todo List - Login</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Todo List</h1>
+        </div>
+        <div class="content-wrap">
+            <input id="id" type="text" placeholder="아이디">
+            <input id="password" type="password" placeholder="비밀번호">
+            <button id="login">로그인</button>
+            <div class="join">회원정보가 없으신가요?&ensp;<a href="./join.html">회원가입</a></div>
+        </div>
+        <div class="popup-wrap" id="popup">
+            <div class="popup">
+              <div class="popup-body">
+                <div class="body-content">
+                  <div class="body-contentbox">
+                    <p>안녕하세요.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-foot">
+                <button onClick="location.href='./plan.html'" class="pop-btn">공부계획 작성하기</button>
+                <button onClick="location.href='./todolist.html'" class="pop-btn">하루일정 작성하기</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!-- 하루 일정 페이지 -->
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../style/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <script src="../script/main.js"></script>
+  <title>Todo List</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Todo List</h1>
+        <div class="name"></div>
+        <div class="content-wrap">
+            <div class="content-left">
+                <div class="main-wrap">
+                    <div id="main-date" class="main-date"></div>
+                    <div id="main-day" class="main-day"></div>
+                    <div id="main-month" style="display: none;"></div>
+                </div>
+                <div class="todo-wrap">
+                    <div class="todo-title">Todo List</div>
+                    <div class="input-wrap">
+                        <div class="input-header">
+                            <input type="text" placeholder="일정을 입력하세요." id="input-box" class="input-box">
+                            <button type="button" id="input-data" class="input-data">추가</button>
+                        </div>
+                        <div id="input-list" class="input-list"></div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <button onClick="location.href='./plan.html'">공부계획 보기</button>
+                </div>
+            </div>
+            <div class="content-right">
+                <table id="calendar" align="center">
+                    <thead>
+                        <tr class="btn-wrap clearfix">
+                            <td>
+                                <label id="prev">
+                                    &#60;
+                                </label>
+                            </td>
+                            <td align="center" id="current-year-month" colspan="5"></td>
+                            <td>
+                                <label id="next">
+                                    &#62;
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="days">
+                            <td class = "sun" align="center">SUN</td>
+                            <td align="center">MON</td>
+                            <td align="center">TUE</td>
+                            <td align="center">WED</td>
+                            <td align="center">THU</td>
+                            <td align="center">FRI</td>
+                            <td class= "sat" align="center">SAT</td>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body" class="calendar-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

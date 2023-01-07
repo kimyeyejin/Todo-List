@@ -1,0 +1,76 @@
+<!-- 공부 계획 페이지 -->
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../style/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <script src="../script/plan.js"></script>
+  <title>Todo List</title>
+</head>
+<body>
+    <div class="main">
+        <div class="content-wrap">
+            <div class="content-right">
+                <h1>Todo List</h1>
+                <table id="calendar" align="center">
+                    <thead>
+                        <tr class="btn-wrap clearfix">
+                            <td>
+                                <label id="prev">
+                                    &#60;
+                                </label>
+                            </td>
+                            <td align="center" id="current-year-month" colspan="5"></td>
+                            <td>
+                                <label id="next">
+                                    &#62;
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="days">
+                            <td class = "sun" align="center">SUN</td>
+                            <td align="center">MON</td>
+                            <td align="center">TUE</td>
+                            <td align="center">WED</td>
+                            <td align="center">THU</td>
+                            <td align="center">FRI</td>
+                            <td class= "sat" align="center">SAT</td>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body" class="calendar-body"></tbody>
+                </table>
+                <div class="footer">
+                    <button onClick="location.href='./todolist.html'">하루일정표 보기</button>
+                </div>
+            </div>
+            <div class="content-left">
+                <div class="plan-wrap">
+                    <div class="blank"></div>
+                    <div class="plan">
+                        <div id="main-month" class="plan-month"></div>.
+                        <div id="main-date" class="plan-date"></div>
+                        <div id="main-day" class="plan-day"></div>
+                    </div>
+                    <button id="plan-add">+</button>
+                </div>
+                <div class="time-wrap">
+                    <div id="time-items" class="time-items"></div>
+                    <div class="total-time-wrap">
+                        <div>총 공부시간</div>
+                        <div id="total-time" class="total-time"></div>
+                    </div>
+                </div>
+                <div class="todo-wrap" style="display: none;">
+                    <div class="input-wrap">
+                        <input type="text" id="input-box" class="input-box">
+                        <button type="button" id="input-data" class="input-data"></button>
+                        <div id="input-list" class="input-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

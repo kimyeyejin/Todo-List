@@ -1,0 +1,76 @@
+<!-- 회원가입 페이지 -->
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../style/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        document.getElementById('join').addEventListener('click', () => {
+            if (document.getElementById('userid').value === '' || !document.getElementById('userid').value) {
+                alert("아이디를 입력해주세요.");
+                return;
+            }
+            if (document.getElementById('password').value === '' || !document.getElementById('password').value) {
+                alert("비밀번호를 입력해주세요.");
+                return;
+            }
+            if (document.getElementById('check').value === '' || !document.getElementById('check').value) {
+                alert("비밀번호 확인을 입력해주세요.");
+                return;
+            }
+            if (document.getElementById('check').value !== document.getElementById('password').value) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return;
+            }
+            if(!alert("가입에 성공했습니다.")) window.location = './login.html';
+        });
+
+    });
+  </script>
+  <title>Todo List - Join</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Todo List</h1>
+        </div>
+        <div class="content-wrap">
+            <label for="userid">아이디</label>
+            <input id="userid" type="text" placeholder="아이디">
+            <label for="password">비밀번호</label>
+            <input id="password" type="password" placeholder="비밀번호">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <label for="check">비밀번호 확인</label>
+                <div id="match"></div>
+            </div>
+            <input id="check" type="password" placeholder="비밀번호 확인">
+            <button id="join">가입하기</button>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        document.getElementById('password').addEventListener('keydown', (e) => {
+            match(e.target.value + e.key, 'pwd');
+        });
+        document.getElementById('check').addEventListener('keydown', (e) => {
+            match(e.target.value + e.key, 'check');
+        });
+    });
+    function match(val, type) {
+        var isMatch = type === 'pwd' ? document.getElementById("check").value === val : val === document.getElementById("password").value
+        if(isMatch) {
+            var matchDiv = document.getElementById("match");
+            matchDiv.innerText = "일치";
+            matchDiv.style = "color: green; width: 70px; text-align: right;"
+        } else {
+            var matchDiv = document.getElementById("match");
+            matchDiv.innerText = "불일치";
+            matchDiv.style = "color: red; width: 70px; text-align: right;"
+        }
+    }
+</script>
+</html>
